@@ -12,15 +12,14 @@ pipeline{
     //定义流水线的所有阶段
 
         //1. 编译阶段
-                stage('代码编译'){
+                stage('环境检查'){
                     steps{
-                    //所有需要做的事情在这里定义
-                        echo "代码编译"
-                        echo "$hello"
-                        echo "${world}"
-                        // centos 命令也可以用
-                        sh 'pwd && ls -alh'  // 查看当前目录
-                        sh 'printenv' //查看当前的环境
+                        echo 'Checking basic information'
+                        sh 'java -version'
+                        sh 'git --version'
+                        sh 'docker version'
+                        sh 'mvn -v'
+
                     }
                 }
         //2.测试
