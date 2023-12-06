@@ -18,15 +18,18 @@ pipeline{
                         sh 'java -version'
                         sh 'git --version'
                         sh 'docker version'
-                        sh 'mvn -v'
+
 
                     }
                 }
         //2.测试
                 stage('TEST'){
+                    agent{
+                        docker {image 'maven:3-alpin'}
+                    }
                     steps{
-                            //所有需要做的事情在这里定义
-                           echo "TEST"
+
+                          sh 'mvn -v'
                                         }
 
                                 }
