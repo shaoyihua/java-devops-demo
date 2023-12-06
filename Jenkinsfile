@@ -18,6 +18,9 @@ pipeline{
                         echo "代码编译"
                         echo "$hello"
                         echo "${world}"
+                        // centos 命令也可以用
+                        sh 'pwd && ls -alh'  // 查看当前目录
+                        sh 'printenv' //查看当前的环境
                     }
                 }
         //2.测试
