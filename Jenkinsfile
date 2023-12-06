@@ -19,7 +19,6 @@ pipeline{
                         sh 'git --version'
                         sh 'docker version'
 
-
                     }
                 }
         //2.测试
@@ -28,7 +27,6 @@ pipeline{
                         docker {image 'maven:3-alpin'}
                     }
                     steps{
-
                           sh 'mvn -v'
                                         }
 
