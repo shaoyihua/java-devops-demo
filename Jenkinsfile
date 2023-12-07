@@ -24,13 +24,14 @@ pipeline{
         //2.测试
                 stage('TEST'){
                     agent{
-                        docker {image 'maven:3-alpin'}
+                        docker { image 'maven:3-alpine' }
+
                     }
                     steps{
                           sh 'mvn -v'
                                         }
 
-                                }
+                      }
         //3.打包
                 stage('PACKAGE'){
                     steps{
